@@ -1,0 +1,200 @@
+@mixin dFlexBetween {
+  display: flex;
+  justify-content: space-between;
+}
+@mixin dFlexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@mixin dFlexStart {
+  display: flex;
+  justify-content: flex-start;
+}
+@mixin dFlexEnd {
+  display: flex;
+  justify-content: flex-end;
+}
+@mixin dFlexBottom {
+  display: flex;
+  align-items: flex-end;
+}
+@mixin dFlexTop {
+  display: flex;
+  align-items: flex-start;
+}
+@mixin castomScrol {
+  &::-webkit-scrollbar {
+    margin: 0 10px;
+    width: 5px !important;
+    height: 3px !important;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: $brightBeig;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $dark;
+    border-radius: 10px;
+  }
+}
+@mixin removeMB {
+  *:last-child {
+    margin-bottom: 0;
+  }
+}
+@mixin removeMR {
+  *:last-child {
+    margin-right: 0;
+  }
+}
+
+$yellow: #efd81d;
+$transparentYellow: #efd61d50;
+$red: #eb4e4e;
+$dark: #444444;
+$transparentDark: #444444b7;
+$white: #ffffff;
+$brightBeig: #f5f2f0;
+$beig: #d6cbbf;
+$shortDelay: all 0.2s ease-in;
+$longDelay: all 0.5s;
+
+.yellow {
+  color: $yellow;
+}
+.body {
+  padding: 0 20px;
+}
+
+.wrapper {
+  height: 100vh;
+  @include dFlexBetween;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Poiret One";
+  * {
+    width: 100%;
+  }
+}
+.main-heading {
+  padding: 30px 0;
+  text-align: end;
+  color: $dark;
+  .main-title {
+    font-size: calc(20px + 20 * ((100vw - 320px) / 1280));
+    margin-bottom: 10px;
+    @media screen and (max-width: 320px) {
+      font-size: calc(0px + 20 * (100vw / 320));
+    }
+  }
+  .main-subtitle {
+    font-family: "Jura", sans-serif;
+    font-size: calc(10px + 10 * ((100vw - 320px) / 1280));
+    font-weight: 400;
+    span {
+      text-transform: uppercase;
+    }
+    @media screen and (max-width: 320px) {
+      font-size: calc(0px + 10 * (100vw / 320));
+    }
+  }
+}
+main {
+  position: relative;
+  flex: auto;
+  @include dFlexBetween;
+  align-items: center;
+}
+// .mian__burger {
+// }
+.burger {
+  z-index: 2;
+  flex: 1;
+  height: 100%;
+  padding: 10px;
+  background-color: $brightBeig;
+  .burger-icon {
+    position: relative;
+    width: 25px;
+    height: 20px;
+    background-color: transparent;
+    .burger-icon__line,
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      display: block;
+      background-color: $dark;
+      transition: $shortDelay;
+      user-select: none;
+    }
+    .burger-icon__line {
+      top: 50%;
+      transform: translate(0, -50%);
+    }
+    &::after {
+      bottom: 0;
+    }
+    &::before {
+      top: 0;
+    }
+    &._show-menu {
+      .burger-icon__line {
+        top: 50%;
+        transform: scale(0);
+      }
+      &::after {
+        bottom: 43%;
+        transform: rotate(-45deg);
+        background-color: $red;
+      }
+      &::before {
+        top: 43%;
+        transform: rotate(45deg);
+        background-color: $red;
+      }
+    }
+  }
+}
+
+/* ----- fonts */
+@import "./fonts";
+/* fonts ----- */
+
+/* ----- zeroing */
+@import "./zeroing";
+/* zeroing ----- */
+
+/* ----- header */
+@import "./sections/header";
+/* header ----- */
+
+/* ----- footer */
+@import "./sections/footer";
+/* footer ----- */
+
+/* ----- sidebar */
+@import "./sections/sidebar";
+/* sidebar ----- */
+
+/* ----- paragraph */
+@import "./sections/paragraph";
+/* paragraph ----- */
+
+// @media (hover: hover) {}
+// @media screen and (hover: none) {}
+// @media screen and (max-width: 1200px) {}
+// @media screen and (max-width: 992px) {}
+// @media screen and (max-width: 1200px) {}
+// @media screen and (max-width: 767px) {}
+// @media screen and (max-width: 500px) {}
+// @media screen and (max-width: 320px) {}
+
+
+// 320 пикселей, 480 и выше;
+// Планшеты — 768 пикселей и выше;
+// Нетбуки — 1024 пикселей и выше;
+// Мониторы — 1280 пикселей, 1600, 1920 и выше.

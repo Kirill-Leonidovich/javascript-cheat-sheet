@@ -1,0 +1,165 @@
+// .main__sidebar {
+// }
+.sidebar {
+  position: absolute;
+  left: -100%;
+  width: 400px;
+  height: 100%;
+  font-family: "Jura", sans-serif;
+  background-color: $brightBeig;
+  border-left: 1px solid $transparentDark;
+  transition: $longDelay;
+  user-select: none;
+  &._show-menu {
+    left: 45px; // height burger (25) and padding (2 * 10) and padding-left in sidebar
+  }
+  @media screen and (max-width: 500px) {
+    width: calc(100% - 45px);
+  }
+}
+.sidebar__body {
+  height: 100%;
+  @include dFlexStart;
+  align-items: center;
+  flex-direction: column;
+}
+// .body {
+// }
+// .sidebar__content {
+// }
+.sidebar__heading {
+  padding: 20px;
+  text-align: center;
+  border-bottom: 2px solid $dark;
+}
+.sidebarr__title {
+  font-size: 25px;
+  text-transform: capitalize;
+}
+.sidebar__subtitle {
+  font-size: 14px;
+  @media screen and (max-width: 320px) {
+    display: none;
+  }
+}
+.sidebar__nav {
+  flex: auto;
+  margin: 20px 0;
+  padding: 0 5px;
+  overflow: auto;
+  @include castomScrol;
+}
+.sidebar__list {
+  @media screen and (min-width: 1400px) {
+    height: 100%;
+    @include dFlexBetween;
+    align-items: center;
+    flex-direction: column;
+  }
+  li {
+    padding: 10px 0;
+  }
+}
+.sidebar__link {
+  font-size: 16px;
+  font-weight: 700;
+  white-space: pre-wrap;
+  line-height: 120%;
+  text-transform: uppercase;
+  color: $dark;
+  border-bottom: 2px solid transparent;
+  transition: $shortDelay;
+  @media (hover: hover) {
+    &:hover {
+      color: $beig;
+      border-bottom: 2px solid $dark;
+    }
+  }
+  @media screen and (max-width: 320px) {
+    font-size: calc(0px + 16 * (100vw / 320));
+  }
+}
+.sub {
+  position: relative;
+  margin-right: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  &::before {
+    content: "";
+    position: absolute;
+    left: -10px;
+    top: 50%;
+    width: 5px;
+    height: 5px;
+    display: block;
+    border-radius: 100%;
+    background-color: $dark;
+    transform: translate(0, -50%);
+    user-select: none;
+  }
+  @media screen and (max-width: 320px) {
+    font-size: calc(0px + 14 * (100vw / 320));
+  }
+}
+.arrow {
+  position: relative;
+}
+.arrow__icon {
+  position: absolute;
+  top: -20px;
+  right: 0;
+  display: block;
+  width: 20px;
+  height: 20px;
+  transition: $shortDelay;
+  cursor: pointer;
+  &::after,
+  &::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 2px;
+    display: block;
+    background-color: $dark;
+    transition: $shortDelay;
+    user-select: none;
+  }
+  &::after {
+    top: 50%;
+    left: 50%;
+    transform: translate(calc(-3px + -50%), 0) rotate(45deg);
+  }
+  &:before {
+    top: 50%;
+    left: 50%;
+    transform: translate(calc(2.5px + -50%), 0) rotate(-45deg);
+  }
+  @media (hover: hover) {
+    &:hover {
+      background-color: $dark;
+      border-radius: 100%;
+      &::after,
+      &::before {
+        background-color: $white;
+      }
+    }
+  }
+  &._active {
+    background-color: $dark;
+    border-radius: 100%;
+    transform: rotate(180deg);
+    &::after,
+    &::before {
+      background-color: $white;
+    }
+  }
+}
+.sidebar__sublist {
+  display: none;
+  padding: 10px 10px 10px 15px;
+  box-shadow: 0 6px 4px -4px rgba(0, 0, 0, 0.2);
+  &._active {
+    display: block;
+  }
+  @include removeMB;
+}
