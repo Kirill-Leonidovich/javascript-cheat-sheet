@@ -59,74 +59,51 @@ $beig: #d6cbbf;
 $shortDelay: all 0.2s ease-in;
 $longDelay: all 0.5s;
 
-.yellow {
-  color: $yellow;
-}
 .body {
   padding: 0 20px;
+  @media screen and (max-width: 479px) {
+    padding: 0 10px;
+  }
 }
-
 .wrapper {
-  height: 100vh;
-  @include dFlexBetween;
-  align-items: center;
-  flex-direction: column;
+  position: relative;
+  padding-left: 45px;
   font-family: "Poiret One";
   * {
     width: 100%;
   }
-}
-.main-heading {
-  padding: 30px 0;
-  text-align: end;
-  color: $dark;
-  .main-title {
-    font-size: calc(20px + 20 * ((100vw - 320px) / 1280));
-    margin-bottom: 10px;
-    @media screen and (max-width: 320px) {
-      font-size: calc(0px + 20 * (100vw / 320));
-    }
-  }
-  .main-subtitle {
-    font-family: "Jura", sans-serif;
-    font-size: calc(10px + 10 * ((100vw - 320px) / 1280));
-    font-weight: 400;
-    span {
-      text-transform: uppercase;
-    }
-    @media screen and (max-width: 320px) {
-      font-size: calc(0px + 10 * (100vw / 320));
-    }
+  @media screen and (max-width: 320px) {
+    padding-left: 35px;
   }
 }
-main {
-  position: relative;
-  flex: auto;
-  @include dFlexBetween;
-  align-items: center;
-}
-// .mian__burger {
-// }
 .burger {
-  z-index: 2;
-  flex: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  width: 45px;
   height: 100%;
-  padding: 10px;
+  padding: 15px 10px;
   background-color: $brightBeig;
+  @media screen and (max-width: 320px) {
+    width: 35px;
+    padding: 10px 5px;
+  }
   .burger-icon {
     position: relative;
     width: 25px;
     height: 20px;
     background-color: transparent;
+    cursor: pointer;
     .burger-icon__line,
     &::after,
     &::before {
       content: "";
       position: absolute;
       left: 0;
+      display: block;
       width: 100%;
       height: 3px;
-      display: block;
       background-color: $dark;
       transition: $shortDelay;
       user-select: none;
@@ -159,6 +136,16 @@ main {
     }
   }
 }
+.content {
+  @include dFlexBetween;
+  align-items: center;
+  flex-direction: column; 
+  height: 100vh;
+}
+// .content__main {
+// }
+// main {
+// }
 
 /* ----- fonts */
 @import "./fonts";
@@ -167,6 +154,10 @@ main {
 /* ----- zeroing */
 @import "./zeroing";
 /* zeroing ----- */
+
+/* ----- common */
+@import "./sections/common";
+/* common ----- */
 
 /* ----- header */
 @import "./sections/header";
@@ -184,17 +175,21 @@ main {
 @import "./sections/paragraph";
 /* paragraph ----- */
 
-// @media (hover: hover) {}
-// @media screen and (hover: none) {}
-// @media screen and (max-width: 1200px) {}
-// @media screen and (max-width: 992px) {}
-// @media screen and (max-width: 1200px) {}
-// @media screen and (max-width: 767px) {}
-// @media screen and (max-width: 500px) {}
-// @media screen and (max-width: 320px) {}
-
-
-// 320 пикселей, 480 и выше;
-// Планшеты — 768 пикселей и выше;
-// Нетбуки — 1024 пикселей и выше;
-// Мониторы — 1280 пикселей, 1600, 1920 и выше.
+@media screen and (hover: hover) {
+}
+@media screen and (hover: none) {
+}
+@media screen and (max-width: 320px) {
+}
+@media screen and (max-width: 479px) {
+}
+@media screen and (max-width: 767px) {
+}
+@media screen and (max-width: 992px) {
+}
+@media screen and (max-width: 1024px) {
+}
+@media screen and (max-width: 1280px) {
+}
+@media screen and (max-width: 1800px) {
+}

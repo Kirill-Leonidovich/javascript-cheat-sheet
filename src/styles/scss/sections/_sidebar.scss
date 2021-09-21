@@ -1,8 +1,8 @@
-// .main__sidebar {
-// }
 .sidebar {
-  position: absolute;
+  position: fixed;
+  top: 0;
   left: -100%;
+  z-index: 2;
   width: 400px;
   height: 100%;
   font-family: "Jura", sans-serif;
@@ -12,16 +12,26 @@
   user-select: none;
   &._show-menu {
     left: 45px; // height burger (25) and padding (2 * 10) and padding-left in sidebar
+    @media screen and (max-width: 320px) {
+      left: 35px;
+    }
   }
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 479px) {
     width: calc(100% - 45px);
+  }
+  @media screen and (max-width: 320px) {
+    width: calc(100% - 35px);
+  }
+  @media screen and (max-height: 300px) {
+    overflow: auto;
+    @include castomScrol;
   }
 }
 .sidebar__body {
-  height: 100%;
   @include dFlexStart;
   align-items: center;
   flex-direction: column;
+  height: 100%;
 }
 // .body {
 // }
@@ -35,6 +45,9 @@
 .sidebarr__title {
   font-size: 25px;
   text-transform: capitalize;
+  @media screen and (max-width: 320px) {
+    font-size: calc(0px + 25 * (100vw / 320));
+  }
 }
 .sidebar__subtitle {
   font-size: 14px;
@@ -45,17 +58,17 @@
 .sidebar__nav {
   flex: auto;
   margin: 20px 0;
-  padding: 0 5px;
-  overflow: auto;
-  @include castomScrol;
+  @media screen and (min-height: 300px) {
+    padding: 0 5px;
+    overflow: auto;
+    @include castomScrol;
+  }
 }
 .sidebar__list {
-  @media screen and (min-width: 1400px) {
-    height: 100%;
-    @include dFlexBetween;
-    align-items: center;
-    flex-direction: column;
-  }
+  @include dFlexBetween;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
   li {
     padding: 10px 0;
   }
@@ -89,9 +102,9 @@
     position: absolute;
     left: -10px;
     top: 50%;
+    display: block;
     width: 5px;
     height: 5px;
-    display: block;
     border-radius: 100%;
     background-color: $dark;
     transform: translate(0, -50%);
@@ -117,9 +130,9 @@
   &::before {
     content: "";
     position: absolute;
+    display: block;
     width: 10px;
     height: 2px;
-    display: block;
     background-color: $dark;
     transition: $shortDelay;
     user-select: none;
