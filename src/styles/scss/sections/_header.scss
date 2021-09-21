@@ -13,8 +13,9 @@
   position: relative;
   flex: 1;
   margin-right: 20px;
-  padding: 5px 15px;
-  font-size: 40px;
+  padding: 20px 15px;
+  font-family: "Poiret One";
+  font-size: 3rem;
   text-transform: uppercase;
   background-color: $dark;
   border-radius: 20px;
@@ -28,8 +29,9 @@
     top: 50%;
     transform: translate(-50%, -50%);
     font-family: "Poppins", sans-serif;
-    font-size: 14px;
+    font-size: 1rem;
     font-weight: 400;
+    line-height: 1;
     color: $white;
     background-color: $dark;
     user-select: none;
@@ -40,10 +42,7 @@
     }
   }
   @media screen and (max-width: 479px) {
-    font-size: calc(0px + 40 * (100vw / 479));
-    &::before {
-      font-size: calc(0px + 14 * (100vw / 479));
-    }
+    padding: 10px 15px;
   }
 }
 .header__heading {
@@ -59,11 +58,11 @@
     display: none;
   }
 }
-// .main-heading {
+// ._main-heading {
 // }
-// .main-title {
+// ._main-title {
 // }
-// .main-subtitle {
+// ._main-subtitle {
 // }
-// .yellow {
+// ._yellow {
 // }

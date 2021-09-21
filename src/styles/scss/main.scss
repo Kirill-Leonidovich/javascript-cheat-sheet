@@ -48,14 +48,19 @@
   }
 }
 
+$white: #ffffff;
+$red: #da5b5b;
+$gray: rgb(189, 189, 189);
+$green: #45a15c;
+$purple: #af51c7;
+$blue: #6483da;
+$navyBlue: #171931ef;
 $yellow: #efd81d;
 $transparentYellow: #efd61d50;
-$red: #eb4e4e;
 $dark: #444444;
 $transparentDark: #444444b7;
-$white: #ffffff;
-$brightBeig: #f5f2f0;
 $beig: #d6cbbf;
+$brightBeig: #f5f2f0;
 $shortDelay: all 0.2s ease-in;
 $longDelay: all 0.5s;
 
@@ -68,7 +73,6 @@ $longDelay: all 0.5s;
 .wrapper {
   position: relative;
   padding-left: 45px;
-  font-family: "Poiret One";
   * {
     width: 100%;
   }
@@ -175,21 +179,21 @@ $longDelay: all 0.5s;
 @import "./sections/paragraph";
 /* paragraph ----- */
 
-@media screen and (hover: hover) {
-}
-@media screen and (hover: none) {
-}
-@media screen and (max-width: 320px) {
-}
-@media screen and (max-width: 479px) {
-}
-@media screen and (max-width: 767px) {
-}
-@media screen and (max-width: 992px) {
-}
-@media screen and (max-width: 1024px) {
-}
-@media screen and (max-width: 1280px) {
-}
-@media screen and (max-width: 1800px) {
-}
+// @media screen and (hover: hover) {
+// }
+// @media screen and (hover: none) {
+// }
+// @media screen and (max-width: 320px) {
+// }
+// @media screen and (max-width: 479px) {
+// }
+// @media screen and (max-width: 767px) {
+// }
+// @media screen and (max-width: 992px) {
+// }
+// @media screen and (max-width: 1024px) {
+// }
+// @media screen and (max-width: 1280px) {
+// }
+// @media screen and (max-width: 1800px) {
+// }

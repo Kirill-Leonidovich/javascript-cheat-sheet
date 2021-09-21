@@ -1,26 +1,48 @@
-.yellow {
+._yellow {
   color: $yellow;
 }
-.main-heading {
+._gray {
+  color: $gray;
+}
+._purple {
+  color: $purple;
+}
+._blue {
+  color: $blue;
+}
+._green {
+  color: $green;
+}
+._red {
+  color: $red;
+}
+._highlighter-rouge {
+  padding: 0 3px;
+  font-size: 1.1em;
+  color: $dark;
+  background-color:  $brightBeig;
+  white-space: nowrap;
+}
+._highlight {
+  font-size: 1.2em;
+  font-weight: 900;
+  white-space: nowrap;
+}
+._main-heading {
   padding: 30px 0;
+  font-family: "Poiret One";
   text-align: end;
   color: $dark;
 }
-.main-title {
-  font-size: calc(20px + 20 * ((100vw - 320px) / 1280));
+._main-title {
+  font-size: 2.2rem;
   padding-bottom: 10px;
-  @media screen and (max-width: 320px) {
-    font-size: calc(0px + 20 * (100vw / 320));
-  }
 }
-.main-subtitle {
+._main-subtitle {
+  font-size: 1.1rem;
   font-family: "Jura", sans-serif;
-  font-size: calc(10px + 10 * ((100vw - 320px) / 1280));
   font-weight: 400;
   span {
     text-transform: uppercase;
-  }
-  @media screen and (max-width: 320px) {
-    font-size: calc(0px + 10 * (100vw / 320));
   }
 }

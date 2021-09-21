@@ -1,0 +1,115 @@
+// .main__paragraph {
+// }
+.paragraph {
+  margin: 30px 0;
+  word-break: keep-all;
+  @media screen and (max-width: 767px) {
+    margin: 15px 0;
+  }
+  @media screen and (max-width: 479px) {
+    margin: 10px 0;
+  }
+}
+// .paragraph__body {
+// }
+// .body {
+// }
+.paragraph__name {
+  position: relative;
+  font-size: 2.5em;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  @media screen and (min-width: 479px) {
+    display: inline;
+    margin: 0 0 0 40px;
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      transform: translate(0, -50%);
+      display: block;
+      height: 3px;
+      background-color: $transparentDark;
+    }
+    &::before {
+      right: calc(100% + 10px);
+      width: 30px;
+    }
+    &::after {
+      left: calc(100% + 10px);
+      width: calc(100vw - 100% - 135px);
+    }
+  }
+}
+.paragraph__content {
+  margin: 30px 0;
+}
+.paragraph__text {
+  margin: 10px 0;
+  font-size: 1rem;
+  word-spacing: 4px;
+  letter-spacing: 1px;
+}
+.paragraph__title {
+  margin: 30px 0 10px;
+  font-size: 1.7rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  @media screen and (min-width: 479px) {
+    padding: 0 40px;
+  }
+}
+.paragraph__subtitle {
+  margin: 20px 0 10px;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+.paragraph__list {
+  @include dFlexBetween;
+  flex-wrap: wrap;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: $brightBeig;
+}
+.paragraph__item {
+  flex: 1;
+  margin: 5px 0;
+  text-align: center;
+}
+.paragraph__link {
+  padding: 5px;
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  color: $dark;
+  transition: $shortDelay;
+  @media screen and (hover: hover) {
+    &:hover {
+      color: $gray;
+    }
+  }
+}
+.paragraph__code {
+  margin: 10px 0;
+  color: $white;
+  border-radius: 10px;
+  background-color: $navyBlue;
+}
+.paragraph__code_body {
+  padding: 10px 50px;
+  @media screen and (max-width: 479px) {
+    padding: 10px 20px;
+  }
+}
+.paragraph__code_block {
+  margin: 25px 0;
+  @media screen and (max-width: 479px) {
+    margin: 10px 0;
+  }
+}
+.paragraph__code_line {
+  margin: 5px 0;
+  font-size: 1.1rem;
+  word-spacing: 3px;
+}
