@@ -16,6 +16,9 @@
       left: 35px;
     }
   }
+  @media screen and (min-width: 1800px) {
+    width: auto;
+  }
   @media screen and (max-width: 479px) {
     width: calc(100% - 45px);
   }
@@ -43,14 +46,15 @@
   border-bottom: 2px solid $dark;
 }
 .sidebarr__title {
-  font-size: 25px;
+  font-size: 2rem;
+  margin-bottom: 10px;
   text-transform: capitalize;
   @media screen and (max-width: 320px) {
-    font-size: calc(0px + 25 * (100vw / 320));
+    margin-bottom: 0;
   }
 }
 .sidebar__subtitle {
-  font-size: 14px;
+  font-size: 1rem;
   @media screen and (max-width: 320px) {
     display: none;
   }
@@ -74,10 +78,9 @@
   }
 }
 .sidebar__link {
-  font-size: 16px;
+  font-size: 1.3rem;
   font-weight: 700;
   white-space: pre-wrap;
-  line-height: 120%;
   text-transform: uppercase;
   color: $dark;
   border-bottom: 2px solid transparent;
@@ -88,14 +91,11 @@
       border-bottom: 2px solid $dark;
     }
   }
-  @media screen and (max-width: 320px) {
-    font-size: calc(0px + 16 * (100vw / 320));
-  }
 }
 .sub {
   position: relative;
   margin-right: 20px;
-  font-size: 14px;
+  font-size: 1rem;
   font-weight: 600;
   &::before {
     content: "";
@@ -109,9 +109,6 @@
     background-color: $dark;
     transform: translate(0, -50%);
     user-select: none;
-  }
-  @media screen and (max-width: 320px) {
-    font-size: calc(0px + 14 * (100vw / 320));
   }
 }
 .arrow {
