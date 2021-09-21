@@ -3,7 +3,7 @@ import { createSubList, $sidebarList } from './subList.js'
 
 
 (async function () {
-  const request = await fetch('./src/scripts/navigation/list-en.json')
+  const request = await fetch('./src/scripts/navigation/list-ru.json')
   const response = await request.json()
 
   return response
