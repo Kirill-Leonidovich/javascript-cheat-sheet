@@ -1,22 +1,20 @@
 // .main__paragraph {
 // }
 .paragraph {
-  margin: 30px 0;
-  word-break: keep-all;
-  @media screen and (max-width: 767px) {
-    margin: 15px 0;
-  }
-  @media screen and (max-width: 479px) {
-    margin: 10px 0;
-  }
+ @include responsiveMargin;
 }
 // .paragraph__body {
 // }
 // .body {
 // }
+.paragraph__section {
+  @include responsiveMargin;
+}
+// .paragraph__header {
+// }
 .paragraph__name {
   position: relative;
-  font-size: 2.5em;
+  font-size: 2.3em;
   font-weight: 800;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -42,15 +40,21 @@
       width: calc(100vw - 100% - 135px);
     }
   }
+  @media screen and (max-width: 320px) {
+    font-size: 2rem;
+  }
 }
-.paragraph__content {
-  margin: 30px 0;
-}
+// .paragraph__content {
+// }
 .paragraph__text {
   margin: 10px 0;
-  font-size: 1rem;
+  font-size: 1.2rem;
   word-spacing: 4px;
   letter-spacing: 1px;
+  text-align: justify;
+  @media screen and (max-width: 320px) {
+    margin: 5px 0;
+  }
 }
 .paragraph__title {
   margin: 30px 0 10px;
@@ -60,11 +64,17 @@
   @media screen and (min-width: 479px) {
     padding: 0 40px;
   }
+  @media screen and (max-width: 320px) {
+    margin: 15px 0 5px;
+  }
 }
 .paragraph__subtitle {
   margin: 20px 0 10px;
   font-size: 1.3rem;
   font-weight: 600;
+  @media screen and (max-width: 320px) {
+    margin: 10px 0 5px;
+  }
 }
 .paragraph__list {
   @include dFlexBetween;
@@ -76,12 +86,14 @@
 .paragraph__item {
   flex: 1;
   margin: 5px 0;
+  padding: 0 5px;
   text-align: center;
 }
 .paragraph__link {
   padding: 5px;
   font-size: 1.2rem;
   text-transform: capitalize;
+  white-space: nowrap;
   color: $dark;
   transition: $shortDelay;
   @media screen and (hover: hover) {
@@ -95,6 +107,9 @@
   color: $white;
   border-radius: 10px;
   background-color: $navyBlue;
+  @media screen and (max-width: 320px) {
+    margin: 5px;
+  }
 }
 .paragraph__code_body {
   padding: 10px 50px;
@@ -107,9 +122,14 @@
   @media screen and (max-width: 479px) {
     margin: 10px 0;
   }
+  @media screen and (max-width: 320px) {
+    margin: 5px;
+  }
 }
 .paragraph__code_line {
   margin: 5px 0;
   font-size: 1.1rem;
   word-spacing: 3px;
 }
+// .paragraph__footer {
+// }  

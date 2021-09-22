@@ -5,9 +5,9 @@
   z-index: 2;
   width: 350px;
   height: 100%;
-  font-family: "Jura", sans-serif;
-  background-color: $brightBeig;
+  font-family: 'Jura', sans-serif;
   border-left: 1px solid $transparentDark;
+  background-color: $brightBeig;
   transition: $longDelay;
   user-select: none;
   &._show-menu {
@@ -46,15 +46,16 @@
   border-bottom: 2px solid $dark;
 }
 .sidebarr__title {
-  font-size: 2rem;
   margin-bottom: 10px;
-  text-transform: capitalize;
+  font-size: 2rem;
+  text-transform: uppercase;
   @media screen and (max-width: 320px) {
     margin-bottom: 0;
   }
 }
 .sidebar__subtitle {
   font-size: 1rem;
+  color: $beig;
   @media screen and (max-width: 320px) {
     display: none;
   }
@@ -91,6 +92,9 @@
       border-bottom: 2px solid $dark;
     }
   }
+  @media screen and (max-width: 320px) {
+    font-size: 1.5rem;
+  }
 }
 .sub {
   position: relative;
@@ -109,6 +113,9 @@
     background-color: $dark;
     transform: translate(0, -50%);
     user-select: none;
+  }
+  @media screen and (max-width: 320px) {
+    font-size: 1.3rem;
   }
 }
 .arrow {

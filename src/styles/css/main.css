@@ -1,19 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Poiret+One&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
-.body {
-  padding: 0 20px;
-}
-
-@media screen and (max-width: 479px) {
-  .body {
-    padding: 0 10px;
-  }
-}
-
+@import url("https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Blinker:wght@100;200;300;400;600;700;800;900&display=swap");
 .wrapper {
   position: relative;
   padding-left: 45px;
+  font-family: "Verdana", sans-serif;
 }
 
 .wrapper * {
@@ -96,10 +88,20 @@
 }
 
 .burger .burger-icon._show-menu::before {
-  top: 43%;
+  top: 42.5%;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
   background-color: #da5b5b;
+}
+
+.body {
+  padding: 0 20px;
+}
+
+@media screen and (max-width: 479px) {
+  .body {
+    padding: 0 10px;
+  }
 }
 
 .content {
@@ -159,8 +161,8 @@ body {
   font-family: "Montserrat", sans-serif;
   font-size: 100%;
   font-weight: 500;
-  line-height: 120%;
-  font-size: calc(10px + 4 * ((100vw - 320px) / 1280));
+  line-height: 150%;
+  font-size: calc(11px + 4 * ((100vw - 320px) / 1280));
   color: #444444;
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
@@ -170,7 +172,7 @@ body {
 @media screen and (max-width: 320px) {
   html,
   body {
-    font-size: calc(0px + 10 * (100vw / 320));
+    font-size: calc(0px + 11 * (100vw / 320));
   }
 }
 
@@ -255,24 +257,24 @@ h6 {
 ._highlight {
   font-size: 1.2em;
   font-weight: 900;
+  color: #efd81d;
   white-space: nowrap;
 }
 
 ._main-heading {
   padding: 30px 0;
-  font-family: "Poiret One";
   text-align: end;
   color: #444444;
 }
 
 ._main-title {
-  font-size: 2.2rem;
   padding-bottom: 10px;
+  font-size: 2rem;
 }
 
 ._main-subtitle {
-  font-size: 1.1rem;
-  font-family: "Jura", sans-serif;
+  font-family: 'Jura', sans-serif;
+  font-size: 1.2rem;
   font-weight: 400;
 }
 
@@ -303,8 +305,8 @@ h6 {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  margin-right: 20px;
-  padding: 20px 15px;
+  margin-right: 30px;
+  padding: 15px;
   font-family: "Poiret One";
   font-size: 3rem;
   text-transform: uppercase;
@@ -324,7 +326,7 @@ h6 {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   font-family: "Poppins", sans-serif;
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-weight: 400;
   line-height: 1;
   color: #ffffff;
@@ -343,7 +345,15 @@ h6 {
 
 @media screen and (max-width: 479px) {
   .header__logo {
-    padding: 10px 15px;
+    margin-right: 20px;
+    padding: 15px 10px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .header__logo {
+    margin-right: 10px;
+    padding: 10px 5px;
   }
 }
 
@@ -384,9 +394,9 @@ h6 {
   z-index: 2;
   width: 350px;
   height: 100%;
-  font-family: "Jura", sans-serif;
-  background-color: #f5f2f0;
+  font-family: 'Jura', sans-serif;
   border-left: 1px solid #444444b7;
+  background-color: #f5f2f0;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
   -webkit-user-select: none;
@@ -465,9 +475,9 @@ h6 {
 }
 
 .sidebarr__title {
-  font-size: 2rem;
   margin-bottom: 10px;
-  text-transform: capitalize;
+  font-size: 2rem;
+  text-transform: uppercase;
 }
 
 @media screen and (max-width: 320px) {
@@ -478,6 +488,7 @@ h6 {
 
 .sidebar__subtitle {
   font-size: 1rem;
+  color: #d6cbbf;
 }
 
 @media screen and (max-width: 320px) {
@@ -551,6 +562,12 @@ h6 {
   }
 }
 
+@media screen and (max-width: 320px) {
+  .sidebar__link {
+    font-size: 1.5rem;
+  }
+}
+
 .sub {
   position: relative;
   margin-right: 20px;
@@ -574,6 +591,12 @@ h6 {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+}
+
+@media screen and (max-width: 320px) {
+  .sub {
+    font-size: 1.3rem;
+  }
 }
 
 .arrow {
@@ -660,25 +683,40 @@ h6 {
 /* sidebar ----- */
 /* ----- paragraph */
 .paragraph {
-  margin: 30px 0;
-  word-break: keep-all;
+  margin: 40px 0;
 }
 
 @media screen and (max-width: 767px) {
   .paragraph {
-    margin: 15px 0;
+    margin: 25px 0;
   }
 }
 
 @media screen and (max-width: 479px) {
   .paragraph {
-    margin: 10px 0;
+    margin: 15px 0;
+  }
+}
+
+.paragraph__section {
+  margin: 40px 0;
+}
+
+@media screen and (max-width: 767px) {
+  .paragraph__section {
+    margin: 25px 0;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .paragraph__section {
+    margin: 15px 0;
   }
 }
 
 .paragraph__name {
   position: relative;
-  font-size: 2.5em;
+  font-size: 2.3em;
   font-weight: 800;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -709,15 +747,24 @@ h6 {
   }
 }
 
-.paragraph__content {
-  margin: 30px 0;
+@media screen and (max-width: 320px) {
+  .paragraph__name {
+    font-size: 2rem;
+  }
 }
 
 .paragraph__text {
   margin: 10px 0;
-  font-size: 1rem;
+  font-size: 1.2rem;
   word-spacing: 4px;
   letter-spacing: 1px;
+  text-align: justify;
+}
+
+@media screen and (max-width: 320px) {
+  .paragraph__text {
+    margin: 5px 0;
+  }
 }
 
 .paragraph__title {
@@ -733,10 +780,22 @@ h6 {
   }
 }
 
+@media screen and (max-width: 320px) {
+  .paragraph__title {
+    margin: 15px 0 5px;
+  }
+}
+
 .paragraph__subtitle {
   margin: 20px 0 10px;
   font-size: 1.3rem;
   font-weight: 600;
+}
+
+@media screen and (max-width: 320px) {
+  .paragraph__subtitle {
+    margin: 10px 0 5px;
+  }
 }
 
 .paragraph__list {
@@ -758,6 +817,7 @@ h6 {
       -ms-flex: 1;
           flex: 1;
   margin: 5px 0;
+  padding: 0 5px;
   text-align: center;
 }
 
@@ -765,6 +825,7 @@ h6 {
   padding: 5px;
   font-size: 1.2rem;
   text-transform: capitalize;
+  white-space: nowrap;
   color: #444444;
   -webkit-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
@@ -781,6 +842,12 @@ h6 {
   color: #ffffff;
   border-radius: 10px;
   background-color: #171931ef;
+}
+
+@media screen and (max-width: 320px) {
+  .paragraph__code {
+    margin: 5px;
+  }
 }
 
 .paragraph__code_body {
@@ -800,6 +867,12 @@ h6 {
 @media screen and (max-width: 479px) {
   .paragraph__code_block {
     margin: 10px 0;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .paragraph__code_block {
+    margin: 5px;
   }
 }
 
