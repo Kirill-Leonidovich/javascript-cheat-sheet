@@ -743,7 +743,7 @@ h6 {
   }
   .paragraph__name::after {
     left: calc(100% + 10px);
-    width: calc(100vw - 100% - 135px);
+    width: calc(100vw - 100% - 155px);
   }
 }
 

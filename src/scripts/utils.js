@@ -21,7 +21,7 @@ export const doClassList = (selector, classNames, type) => {
 }
 
 
-export const joinMessage = (message) => message.split(' ').join('').toLowerCase()
+export const joinMessage = (message) => message.split(' ').join('-').toLowerCase()
 
 
 

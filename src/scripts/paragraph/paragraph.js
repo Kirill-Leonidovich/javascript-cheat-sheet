@@ -1,58 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
+import { getDomElement } from "../utils.js";
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+export const checkParagraph = (event) => {
+  const $main = getDomElement('.main')
+  
+  $main.innerHTML = null
+  $main.insertAdjacentHTML('beforeend', типыданных)
+  event.preventDefault()
+}
 
-  <link rel="stylesheet" href="./src/styles/css/main.min.css">
-
-  <title>CHEAT</title>
-</head>
-
-<body>
-  <div class="wrapper">
-    <div class="burger">
-      <div class="burger-icon">
-        <span class="burger-icon__line"></span>
-      </div>
-    </div>
-    <aside class="sidebar" id="sidebar">
-      <div class="sidebar__body body">
-        <div class="sidebar__heading">
-          <h4 class="sidebarr__title">
-            навигация
-          </h4>
-          <h5 class="sidebar__subtitle">
-            выберите интересующую вас тему
-          </h5>
-        </div>
-        <nav class="sidebar__nav">
-          <ul class="sidebar__list">
-            <!--  -->
-          </ul>
-        </nav>
-      </div>
-    </aside>
-    <section class="content">
-      <header class="content__header header" id="header">
-        <div class="header__body body">
-          <a class="header__logo _yellow" href="#">
-            js
-          </a>
-          <div class="header__heading _main-heading">
-            <h1 class="header__title _main-title">
-              Шпаргалка по <span class="_yellow">JavaScript</span>
-            </h1>
-            <h3 class="header__subtitle _main-subtitle">
-              Базовые вопросы собеседования для <span class="_yellow">junior</span> фронтенд разработчика
-            </h3>
-          </div>
-        </div>
-      </header>
-      <main class="content__main main" id="main">
-        <!-- <section class="main__paragraph paragraph" id="dataTypes">
+const типыданных = `
+<section class="main__paragraph paragraph" id="dataTypes">
           <div class="paragraph__body body">
             <section class="paragraph__header paragraph__section">
               <h2 class="paragraph__name">
@@ -150,8 +107,7 @@
                     </div>
                     <div class="paragraph__code_line">
                       <span class="_purple">console</span>.<span class="_purple">log</span>(<span
-                        class="_blue">typeof</span> `<span class="_green">Привет</span>, ${<span
-                        class="_blue">name</span>}`); <span class="_gray">// "string"</span>
+                        class="_blue">typeof</span> <span class="_gray">// "string"</span>
                     </div>
                   </div>
                   <div class="paragraph__code_block">
@@ -304,24 +260,5 @@
               </ul>
             </section>
           </div>
-        </section> -->
-      </main>
-      <footer class="content__footer footer" id="footer">
-        <div class="footer__body body">
-          <div class="footer__heading _main-heading">
-            <h1 class="footer__title _main-title">
-              Шпаргалка по <span class="_yellow">JavaScript</span>
-            </h1>
-            <h3 class="footer__subtitle _main-subtitle">
-              Базовые вопросы собеседования для <span class="_yellow">junior</span> фронтенд разработчика
-            </h3>
-          </div>
-        </div>
-      </footer>
-    </section>
-  </div>
-
-  <script src="./src/scripts/app.js" type="module"></script>
-</body>
-
-</html>
+        </section>
+        `
