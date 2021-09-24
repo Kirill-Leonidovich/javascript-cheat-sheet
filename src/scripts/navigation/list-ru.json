@@ -2,13 +2,13 @@
   {
     "типы данных": [
       "приведение типов",
+      "string",
       "number",
       "bigint",
-      "string",
-      "boolean",
-      "symbol",
       "undefined",
       "null",
+      "boolean",
+      "symbol",
       {
         "объект": [
           "приведение к примитивам",

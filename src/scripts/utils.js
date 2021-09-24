@@ -1,4 +1,8 @@
-export const getDomElement = (selector, parent = document) => typeof selector === 'string' ? parent.querySelector(selector) : selector
+export const getDomElement = (selector, all, parent = document) => {
+  return typeof selector === 'string'
+    ? all ? parent.querySelectorAll(selector) : parent.querySelector(selector)
+    : selector
+}
 
 
 export const doClassList = (selector, classNames, type) => {
@@ -21,9 +25,16 @@ export const doClassList = (selector, classNames, type) => {
 }
 
 
-export const joinMessage = (message) => message.split(' ').join('-').toLowerCase()
-
-
+// export const joinMessage = (message) => message.split(' ').join('-').toLowerCase()
+export const createIdForNavigation = (words) => {
+  return words
+    .split(' ')
+    .map((word, i) => {
+      if (i === 0) return word
+      return `${word.slice(0, 1).toUpperCase() + word.slice(1)}`
+    })
+    .join('')
+}
 
 
 // export const getDomElement = (selector, all) => {

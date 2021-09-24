@@ -1,10 +1,18 @@
-import {} from './navigation/getLinks.js'
+import { getDomElement, doClassList } from './utils.js'
+import { } from './navigation/getLinks.js'
+import { $paragraphBody } from './paragraph/paragraph.js'
 
 
-const burgerIcon = document.querySelector('.burger-icon')
-const sidebar = document.querySelector('#sidebar')
+const $burgerIcon = getDomElement('.burger-icon')
+const $sidebar = getDomElement('#sidebar')
 
-burgerIcon.addEventListener('click', (event) => {
-  event.currentTarget.classList.toggle('_show-menu')
-  sidebar.classList.toggle('_show-menu')
+$burgerIcon.addEventListener('click', () => {
+  doClassList($burgerIcon, '_show-menu', 'toggle')
+  doClassList($sidebar, '_show-menu', 'toggle')
 })
+
+
+$paragraphBody.addEventListener('DOMNodeInserted', () => {
+  doClassList($burgerIcon, '_show-menu', 'remove')
+  doClassList($sidebar, '_show-menu', 'remove')
+});

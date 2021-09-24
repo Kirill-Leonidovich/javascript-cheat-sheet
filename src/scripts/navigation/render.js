@@ -1,25 +1,25 @@
-import { getDomElement, joinMessage } from '../utils.js'
+import { getDomElement, createIdForNavigation } from '../utils.js'
 import { fillSubList } from './subList.js'
-import { checkParagraph } from '../paragraph/paragraph.js'
+import { renderParagraph } from '../paragraph/paragraph.js'
 
 
 export const renderLink = (selector, message, sub) => {
   const $el = getDomElement(selector)
-  const id = joinMessage(message)
+  const id = createIdForNavigation(message)
 
   const linkBody = `<li><a class="sidebar__link ${sub ? sub : ''}" id="${id}"" href="${id}">${message}</a></li>`
 
   $el.insertAdjacentHTML('beforeend', linkBody)
 
   const el = getDomElement(`#${id}`)
-  el.addEventListener('click', checkParagraph)
+  el.addEventListener('click', renderParagraph)
 
   return el
 }
 
 
 export const renderSubList = (selector, message, arr) => {
-  const listId = joinMessage(message) + '-sublist'
+  const listId = createIdForNavigation(message) + 'Sublist'
   const el = renderLink(selector, message, false)
   const listItem = el.closest('li')
 
