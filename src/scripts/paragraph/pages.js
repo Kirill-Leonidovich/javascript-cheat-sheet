@@ -13,7 +13,7 @@ const dataType = `
       типы данных
     </h2>
   </section>
-    <section class="paragraph__content paragraph__section">
+  <section class="paragraph__content paragraph__section">
     <p class="paragraph__text">
       Все языки программирования содержат встроенные типы данных, но они часто отличаются друг от друга в
       разных
