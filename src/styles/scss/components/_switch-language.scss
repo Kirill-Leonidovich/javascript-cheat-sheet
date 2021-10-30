@@ -1,0 +1,51 @@
+.switch-language {
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  .switch-language__radio {
+    display: none;
+    @media screen and (hover: hover) {
+      &:hover + .switch-language__label {
+        &::before {
+          background-color: $transparentYellow;
+        }
+      }
+    }
+    &:active + .switch-language__label {
+      &::before {
+        background-color: $transparentYellow;
+      }
+    }
+    &:checked + .switch-language__label {
+      &::before {
+        background-color: $yellow;
+      }
+    }
+  }
+  .switch-language__label {
+    position: relative;
+    display: inline-block;
+    margin: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: $white;
+    border-radius: 50%;
+    cursor: pointer;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+      width: 200%;
+      height: 200%;
+      background-color: $dark;
+      border-radius: 10px;
+      transition: $shortDelay;
+    }
+  }
+}

@@ -1,0 +1,76 @@
+.burger {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  max-width: 45px;
+  height: 100%;
+  padding: 15px 10px;
+  background-color: $brightBeig;
+  @media screen and (max-width: 320px) {
+    max-width: 35px;
+    padding: 10px 5px;
+  }
+  .burger-icon {
+    position: relative;
+    width: 25px;
+    height: 20px;
+    background-color: transparent;
+    cursor: pointer;
+    .burger-icon__line,
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      display: block;
+      background-color: $dark;
+      transition: $shortDelay;
+      user-select: none;
+    }
+    .burger-icon__line {
+      top: 50%;
+      transform: translate(0, -50%);
+    }
+    &::after {
+      bottom: 0;
+    }
+    &::before {
+      top: 0;
+    }
+    @media screen and (hover: hover) {
+      &:hover {
+        .burger-icon__line,
+        &::before,
+        &::after {
+          background-color: $transparentDark;
+        }
+      }
+    }
+    &:active {
+      .burger-icon__line,
+      &::before,
+      &::after {
+        background-color: $transparentDark;
+      }
+    }
+    &._active {
+      .burger-icon__line {
+        top: 50%;
+        transform: scale(0);
+      }
+      &::after {
+        bottom: 43%;
+        transform: rotate(-45deg);
+        background-color: $red;
+      }
+      &::before {
+        top: 42.5%;
+        transform: rotate(45deg);
+        background-color: $red;
+      }
+    }
+  }
+}
