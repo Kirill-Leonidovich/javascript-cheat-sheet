@@ -1,4 +1,5 @@
-import { getDomElement } from './utils.js'
+import { getDomElement } from '../utils.js'
+import { fillNav } from './nav.js'
 
 export const setCurrentLanguage = () => {
 	const languageId = getLanguageId()
@@ -7,13 +8,14 @@ export const setCurrentLanguage = () => {
 
 	$radioLanguage.checked = true
 
-	$switchLanguage.addEventListener('change', setLanguage)
+	$switchLanguage.addEventListener('change', overrideLanguage)
 }
 
-const setLanguage = (e) => {
+const overrideLanguage = (e) => {
 	const { target } = e
 
 	localStorage.setItem('language', target.id)
+	fillNav()
 }
 
 const getLanguageId = () => {

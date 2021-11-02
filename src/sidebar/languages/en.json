@@ -1,0 +1,107 @@
+[
+  {
+    "data types": [
+      "number",
+      "bigint",
+      "string",
+      "boolean",
+      "symbol",
+      "undefined",
+      "null",
+      {
+        "object": [
+          "casts to primitives",
+          "object methods",
+          "copying objects",
+          "iterable objects",
+          "map set",
+          "weekmap weekset"
+        ]
+      },
+      "type casts"
+    ]
+  },
+  {
+    "array": [
+      "array methods",
+      "iterating over an array",
+      "rest spread",
+      "length of an array"
+    ]
+  },
+  "use strict",
+  {
+    "operators": [
+      "logical",
+      {
+        "mathematical": ["increment decrement", "appropriation", "arithmetic"]
+      },
+      "comparison",
+      "conditional"
+    ]
+  },
+  { "variables": ["destructuring", "let", "const", "var"] },
+  { "cycles": ["for", "forof", "forin", "while", "symbol iterator"] },
+  {
+    "functions": [
+      "Function object, NFE",
+      "expression declaration",
+      "arrow functions",
+      "new function",
+      "anonymous",
+      "settimeout setinterval",
+      "decorators",
+      "callbacks",
+      "functions of the first kind",
+      "functions of the first order",
+      "higher order functions",
+      "pure function",
+      "correction",
+      "recursion",
+      "closure",
+      "arguments",
+      "generators"
+    ]
+  },
+  {
+    "context": ["context binding", "context in functions", "loss of context"]
+  },
+  "proto prototopy",
+  { "classes": ["super", "constructor", "expendens"] },
+  "error processing",
+  { "promises": ["promise chain", "3 states", "async await"] },
+  "event loop",
+  "json",
+  { "dom": ["navigation", "change document", "scrolling", "coordinates"] },
+  {
+    "events": [
+      "browser",
+      "forms",
+      "loading",
+      "delegation",
+      "surfacing",
+      "stopPropagation preventDefault"
+    ]
+  },
+  "fetch",
+  {
+    "browser storage": ["cookies", "localstorage", "sessionstorage"]
+  },
+  "scope",
+  {
+    "Other": [
+      "hosting",
+      "falsy truey",
+      "selection of brute force methods",
+      "how to speed up page loading",
+      "es6",
+      "the difference between asynchronous code and synchronous code",
+      "modules",
+      "proxy",
+      "eval",
+      "intl",
+      "new",
+      "async await"
+    ]
+  }
+]
