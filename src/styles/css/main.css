@@ -39,7 +39,6 @@ html,
 body {
   height: 100%;
   width: 100%;
-  line-height: 1;
   line-height: 150%;
   font-size: 100%;
   font-family: "Verdana", sans-serif;
@@ -98,6 +97,7 @@ h5,
 h6 {
   font-size: inherit;
   font-weight: 400;
+  line-height: 120%;
 }
 
 /* zeroing ----- */
@@ -477,7 +477,6 @@ h6 {
 }
 
 .sidebar .sidebar__switch-language {
-  padding: 10px;
   border-top: 2px solid #444444;
 }
 
@@ -541,6 +540,7 @@ h6 {
 /* ----- switch-language */
 .switch-language {
   max-width: 100%;
+  padding: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -556,16 +556,6 @@ h6 {
 
 .switch-language .switch-language__radio {
   display: none;
-}
-
-@media screen and (hover: hover) {
-  .switch-language .switch-language__radio:hover + .switch-language__label::before {
-    background-color: #efd61d50;
-  }
-}
-
-.switch-language .switch-language__radio:active + .switch-language__label::before {
-  background-color: #efd61d50;
 }
 
 .switch-language .switch-language__radio:checked + .switch-language__label::before {
@@ -600,6 +590,16 @@ h6 {
   transition: all 0.2s ease-in;
 }
 
+@media screen and (hover: hover) {
+  .switch-language .switch-language__label:hover::before {
+    background-color: #efd61d50;
+  }
+}
+
+.switch-language .switch-language__label:active::before {
+  background-color: #efd61d50;
+}
+
 /* switch-language ----- */
 /* ----- header */
 .header {
@@ -620,9 +620,6 @@ h6 {
 
 .header .header__logo {
   position: relative;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
   margin-right: 30px;
   padding: 15px;
   font-family: "Poiret One";
@@ -663,6 +660,7 @@ h6 {
 
 @media screen and (max-width: 479px) {
   .header .header__logo {
+    font-size: 2rem;
     margin-right: 20px;
     padding: 15px 10px;
   }
@@ -760,6 +758,12 @@ h6 {
   }
 }
 
+@media screen and (min-width: 479px) and (hover: hover) {
+  .paragraph .paragraph__name::after {
+    width: calc(100vw - 100% - 155px);
+  }
+}
+
 @media screen and (max-width: 320px) {
   .paragraph .paragraph__name {
     font-size: 2rem;
@@ -851,7 +855,7 @@ h6 {
 }
 
 .paragraph .paragraph__code {
-  margin: 10px 0;
+  margin: 10px 0 15px 0;
   color: #ffffff;
   border-radius: 10px;
   background-color: #171931ef;
@@ -859,7 +863,7 @@ h6 {
 
 @media screen and (max-width: 320px) {
   .paragraph .paragraph__code {
-    margin: 5px;
+    margin: 5px 0 10px 0;
   }
 }
 
@@ -885,7 +889,7 @@ h6 {
 
 @media screen and (max-width: 320px) {
   .paragraph .paragraph__code_block {
-    margin: 5px;
+    margin: 5px 0;
   }
 }
 

@@ -7,7 +7,6 @@
   }
   .header__logo {
     position: relative;
-    flex: 1;
     margin-right: 30px;
     padding: 15px;
     font-family: "Poiret One";
@@ -38,6 +37,7 @@
       }
     }
     @media screen and (max-width: 479px) {
+      font-size: 2rem;
       margin-right: 20px;
       padding: 15px 10px;
     }

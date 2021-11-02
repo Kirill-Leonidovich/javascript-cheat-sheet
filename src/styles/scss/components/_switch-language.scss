@@ -1,23 +1,12 @@
 .switch-language {
   max-width: 100%;
+  padding: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   .switch-language__radio {
     display: none;
-    @media screen and (hover: hover) {
-      &:hover + .switch-language__label {
-        &::before {
-          background-color: $transparentYellow;
-        }
-      }
-    }
-    &:active + .switch-language__label {
-      &::before {
-        background-color: $transparentYellow;
-      }
-    }
     &:checked + .switch-language__label {
       &::before {
         background-color: $yellow;
@@ -46,6 +35,18 @@
       background-color: $dark;
       border-radius: 10px;
       transition: $shortDelay;
+    }
+    @media screen and (hover: hover) {
+      &:hover {
+        &::before {
+          background-color: $transparentYellow;
+        }
+      }
+    }
+    &:active {
+      &::before {
+        background-color: $transparentYellow;
+      }
     }
   }
 }

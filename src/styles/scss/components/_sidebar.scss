@@ -35,7 +35,7 @@
     align-items: center;
     flex-direction: column;
     height: 100%;
-    & > * {
+    > * {
       width: 100%;
     }
   }
@@ -129,7 +129,6 @@
     right: 0;
   }
   .sidebar__switch-language {
-    padding: 10px;
     border-top: 2px solid $dark;
   }
 }
