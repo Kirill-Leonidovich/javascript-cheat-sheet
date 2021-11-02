@@ -1,12 +1,16 @@
-import { getDomElement } from './src/utils.js'
+import { $paragraphBody, updatePage } from './src/paragraph/history.js'
 import { setCurrentLanguage } from './src/sidebar/language.js'
 import { fillNav } from './src/sidebar/nav.js'
-import { toggleShowSidebar } from './src/sidebar/burger.js'
+import { $burgerIcon, toggleShowSidebar, hideSidebar } from './src/sidebar/burger.js'
 
-window.addEventListener('load', () => {
+const start = () => {
+	updatePage()
 	setCurrentLanguage()
 	fillNav()
 
-	const $burgerIcon = getDomElement('.burger-icon')
+	$paragraphBody.addEventListener('DOMNodeInserted', hideSidebar)
 	$burgerIcon.addEventListener('click', toggleShowSidebar)
-})
+}
+
+window.addEventListener('load', start)
+window.addEventListener('hashchange', updatePage)

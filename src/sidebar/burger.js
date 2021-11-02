@@ -1,25 +1,34 @@
 import { getDomElement, doClassList } from '../utils.js'
 
-export const toggleShowSidebar = (e) => {
-	const { currentTarget } = e
-	const $sidebar = getDomElement('.sidebar')
-	const $sidebarCover = getDomElement('.sidebar__cover')
+export const $burgerIcon = getDomElement('.burger-icon')
 
-	if (doClassList(currentTarget, '_active', 'contains')) {
-		hideSidebar(currentTarget, $sidebar)
+const $sidebar = getDomElement('.sidebar')
+const $sidebarCover = getDomElement('.sidebar__cover')
+
+export const toggleShowSidebar = () => {
+	if (doClassList($burgerIcon, '_active', 'contains')) {
+		hideSidebar(true)
 	} else {
-		showSidebar(currentTarget, $sidebar)
+		showSidebar(false)
 	}
-
-	$sidebarCover.addEventListener('click', () => hideSidebar(currentTarget, $sidebar))
 }
 
-const hideSidebar = ($icon, $sidebar) => {
-	doClassList($icon, '_active', 'remove')
-	doClassList($sidebar, '_show-nav', 'remove')
+export const hideSidebar = () => {
+	doSidebar(false)
 }
 
-const showSidebar = ($icon, $sidebar) => {
-	doClassList($icon, '_active', 'add')
-	doClassList($sidebar, '_show-nav', 'add')
+const showSidebar = () => {
+	doSidebar(true)
 }
+
+const doSidebar = (flag) => {
+	if (flag) {
+		doClassList($burgerIcon, '_active', 'add')
+		doClassList($sidebar, '_show-nav', 'add')
+	} else {
+		doClassList($burgerIcon, '_active', 'remove')
+		doClassList($sidebar, '_show-nav', 'remove')
+	}
+}
+
+$sidebarCover.addEventListener('click', hideSidebar)

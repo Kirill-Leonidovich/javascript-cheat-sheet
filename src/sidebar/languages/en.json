@@ -103,5 +103,8 @@
       "new",
       "async await"
     ]
+  },
+  {
+    "window" : ["location", "history", "document", "screen", "navigator"]
   }
 ]
