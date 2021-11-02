@@ -1,18 +1,18 @@
 import { getDomElement, doClassList } from '../utils.js'
 
-const $sidebarList = getDomElement('.sidebar__list')
-const hashContent = {}
+const hashContents = {}
 
 export const fillNav = () => {
+	const $sidebarList = getDomElement('.sidebar__list')
 	const languageId = localStorage.getItem('language')
 
-	hashContent[languageId]
-		? overrideContent($sidebarList, hashContent[languageId])
-		: getNav(languageId).then((nav) => {
+	hashContents[languageId]
+		? overrideContent($sidebarList, hashContents[languageId])
+		: getNavStruucture(languageId).then((navStructure) => {
 				overrideContent($sidebarList)
-				createNav(nav, $sidebarList)
+				createNav(navStructure, $sidebarList)
 
-				hashContent[languageId] ? null : (hashContent[languageId] = $sidebarList.innerHTML)
+				hashContents[languageId] ? null : (hashContents[languageId] = $sidebarList.innerHTML)
 		  })
 
 	$sidebarList.addEventListener('click', addHandlerSidebar)
@@ -22,30 +22,30 @@ const overrideContent = ($el, content = '') => {
 	$el.innerHTML = content
 }
 
-const getNav = async (id) => {
+const getNavStruucture = async (id) => {
 	const response = await fetch(`./src/sidebar/languages/${id}.json`)
 	const nav = await response.json()
 
 	return nav
 }
 
-const createNav = (nav, $parent) => {
-	nav.forEach((item) => chceckData(item, $parent))
+const createNav = (structure, $parent) => {
+	structure.forEach((item) => chceckData(item, $parent))
 }
 
 const chceckData = (navItem, $parent) => {
 	if (typeof navItem === 'string') {
 		renderNavItem(createLink(navItem), $parent)
 	} else {
-		createSubList(navItem, $parent)
+		renderSubList(navItem, $parent)
 	}
 }
 
 const createLink = (link) => {
 	const idLink = getIdLink(link)
 	const markupLink = `
-		<li class="sidebar__item" id="${idLink}">
-			<a href="#${idLink}" class="sidebar__link">
+		<li class="sidebar__item">
+			<a class="sidebar__link" id="${idLink}" href="#${idLink}">
 				${link}
 			</a>
 		</li>
@@ -54,11 +54,10 @@ const createLink = (link) => {
 	return markupLink
 }
 
-const createSubList = (subNav, $parent) => {
+const renderSubList = (subNav, $parent) => {
 	const link = Object.keys(subNav)[0]
-	const nav = Object.values(subNav)
-	const idMainLink = getIdLink(link)
-	const idSubNav = `${idMainLink}Nav`
+	const nav = Object.values(subNav).flat()
+	const idSubNav = `${getIdLink(link)}Nav`
 	const markupSubNav = `
 		<nav class="sidebar__subnav" id="${idSubNav}">
 			<div class="sidebar__arrow arrow">
@@ -72,10 +71,10 @@ const createSubList = (subNav, $parent) => {
 	renderNavItem(markupSubNav, $parent)
 
 	const $currentSubNav = getDomElement(`#${idSubNav}`)
-	const $currentSubList = getDomElement('.sidebar__list', false, $currentSubNav)
+	const $currentList = getDomElement('.sidebar__list', false, $currentSubNav)
 
 	renderNavItem(createLink(link), $currentSubNav, 'afterbegin')
-	createNav(...nav, $currentSubList)
+	createNav(nav, $currentList)
 }
 
 const getIdLink = (text) => {

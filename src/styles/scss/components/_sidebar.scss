@@ -29,6 +29,16 @@
     overflow: auto;
     @include castomScrol;
   }
+  .sidebar__cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    background-color: transparent;
+  }
   .sidebar__body {
     display: flex;
     justify-content: flex-start;

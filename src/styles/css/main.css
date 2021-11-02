@@ -326,6 +326,17 @@ h6 {
   }
 }
 
+.sidebar .sidebar__cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  background-color: transparent;
+}
+
 .sidebar .sidebar__body {
   display: -webkit-box;
   display: -ms-flexbox;

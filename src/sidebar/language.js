@@ -15,6 +15,7 @@ const overrideLanguage = (e) => {
 	const { target } = e
 
 	localStorage.setItem('language', target.id)
+	
 	fillNav()
 }
 
