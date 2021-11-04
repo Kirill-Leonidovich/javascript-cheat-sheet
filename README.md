@@ -1,2 +1,1 @@
 ﻿# javaScript-cheat-sheet
-### app
