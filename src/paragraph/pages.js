@@ -1,4 +1,4 @@
-export { string, dataTypes, defaultParagraph }
+export { string, number, dataTypes, defaultParagraph }
 
 const string = `
   <section class="paragraph__header paragraph__section">
@@ -128,6 +128,14 @@ const string = `
         </a>
       </li>
     </ul>
+  </section>
+  `
+
+const number = `
+  <section class="paragraph__header paragraph__section">
+    <h2 class="paragraph__name">Number</h2>
+  </section>
+      hello world
   </section>
   `
 
@@ -383,5 +391,7 @@ const dataTypes = `
   `
 
 const defaultParagraph = `
-  Hello world!
+  <h2 class="paragraph__name">
+    Страница еще не готова
+  </h2>
   `

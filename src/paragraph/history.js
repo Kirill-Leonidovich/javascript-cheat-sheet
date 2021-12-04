@@ -18,6 +18,8 @@ const getPage = (id) => {
 		return pages.dataTypes
 	} else if (id === 'string' || id === 'строки') {
 		return pages.string
+	} else if (id === 'number' || id === "числа") {
+		return pages.number
 	} else {
 		return pages.defaultParagraph
 	}
