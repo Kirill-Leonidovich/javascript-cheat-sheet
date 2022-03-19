@@ -129,7 +129,7 @@ const string = `
       </li>
     </ul>
   </section>
-  `
+`
 
 const number = `
   <section class="paragraph__header paragraph__section">
@@ -137,7 +137,7 @@ const number = `
   </section>
       hello world
   </section>
-  `
+`
 
 const dataTypes = `
   <section class="paragraph__header paragraph__section">
@@ -388,10 +388,10 @@ const dataTypes = `
       </li>
     </ul>
   </section>
-  `
+`
 
 const defaultParagraph = `
   <h2 class="paragraph__name">
     Страница еще не готова
   </h2>
-  `
+`
